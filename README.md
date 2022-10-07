@@ -9,4 +9,8 @@ In terms of site flow:
 https://i.imgur.com/mOmW5Dq.png
 It may seem a little complex but it is understandable. 
 
+For the boilerplate, I used a previous lab we had gone over here:
+https://seir-725-batch.notion.site/Full-Day-Build-5b37463e3dc54208b02159822b58294a#b67a9c0e7fb34c41878f14644f14c159
+This was a great help for getting started and gave me a definitive point to get everything going!
+
 I have a full plan on where I want to go and how I will tackle this. I'm looking forward to finishing this project!
