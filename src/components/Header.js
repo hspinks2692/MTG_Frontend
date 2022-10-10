@@ -13,13 +13,13 @@ function Header(props) {
 
   return (
     <header>
-      <h1>My Portfolio Page</h1>
+      <h1>The Gathering</h1>
       <nav style={navStyle}>
         <Link to="/">
           <div>HOME</div>
         </Link>
-        <Link to="/about">
-          <div>ABOUT</div>
+        <Link to="/search">
+          <div>SEARCH</div>
         </Link>
         <Link to="/projects">
           <div>PROJECTS</div>

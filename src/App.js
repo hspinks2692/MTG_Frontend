@@ -3,10 +3,11 @@ import "./App.css";
 // IMPORT COMPONENTS
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Test from "./components/Test";
 import { Route, Routes } from "react-router-dom";
 // IMPORT PAGES
 import Home from "./pages/Home";
-import About from "./pages/About";
+import Search from "./pages/Search";
 import Projects from "./pages/Projects";
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/projects" element={<Projects URL={URL} />} />
-        <Route path="/about" element={<About URL={URL} />} />
+        <Route path="/search" element={<Search URL={URL} />} />
       </Routes>
+      <Test/>
       <Footer />
     </div>
   );
