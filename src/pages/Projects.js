@@ -1,43 +1,53 @@
-import { useState, useEffect } from "react";
+import * as React from "react";
 
-function Projects(props) {
-  // create state to hold projects
-  const [projects, setProjects] = useState(null);
+const Search = () => {
+  const COLORS = ["red", "blue", "white", "green", "black"];
+  const comp = [">", "=", "<"];
+  const cmc = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  const [checkedOne, setCheckedOne] = React.useState(false);
+  const [checkedTwo, setCheckedTwo] = React.useState(false);
 
-  //create function to make api call
-  const getProjectsData = async () => {
-    
-		//make api call and get response
-    const response = await fetch(props.URL + "projects");
-    
-		// turn response into javascript object
-    const data = await response.json();
-    
-		// set the projects state to the data
-    setProjects(data);
-
+  const handleChangeOne = () => {
+    setCheckedOne(!checkedOne);
   };
 
-  // make an initial call for the data inside a useEffect, so it only happens once on component load
-  useEffect(() => getProjectsData(), []);
+  const handleChangeTwo = () => {
+    setCheckedTwo(!checkedTwo);
+  };
 
-  // define a function that will return the JSX needed once we get the data
-  const loaded = () => {
-    return projects.map((project) => (
+  const createCheckBox = (option) => {
+    return (
+      <label>
+        <input
+          type="Checkbox"
+          value={checkedOne}
+          onChange={handleChangeOne}
+          key={option}
+        />
+        {option}{" "}
+      </label>
+    );
+  };
+
+  const createOptions = (option) => {
+    return <option value={option}>{option}</option>;
+  };
+  //<select name="cars" id="cars">
+  //<option value="volvo">Volvo</option>
+  return (
+    <section>
+      <h1>Search Page</h1>
+      <h3>Color(s)</h3>
+      <div>{COLORS.map(createCheckBox)}</div>
+      <h3>Cost</h3>
+      <div>{comp.map(createCheckBox)}</div>
       <div>
-        <h1>{project.name}</h1>
-        <img src={project.image} />
-        <a href={project.git}>
-          <button>Github</button>
-        </a>
-        <a href={project.live}>
-          <button>live site</button>
-        </a>
+        <select name="cmc" id="cmc">
+          {cmc.map(createOptions)}
+        </select>
       </div>
-    ));
-  };
+    </section>
+  );
+};
 
-  return projects ? loaded() : <h1>Loading...</h1>;
-}
-
-export default Projects;
+export default Search;
