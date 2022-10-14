@@ -14,6 +14,11 @@ function Show(props) {
     padding: "8px",
     margin: "auto"
   };
+
+  const headerStyle = {
+    marginLeft: "4%"
+  };
+
   // create function to make api call
   const getCardsData = async () => {
     // make api call and get response
@@ -54,11 +59,19 @@ function Show(props) {
     return <section>{check(card)}</section>;
   };
 
+  const emptyChecker = (cards) => {
+    if (cards.object !== "error") {
+      return <div style={imgStyle}>{Cards.data.map(display)}</div>;
+    } else {
+      return <h1 style={headerStyle}>No Results Found</h1>;
+    }
+  };
+
   const loaded = () => {
     return (
       <div>
-        <h1>Results</h1>
-        <div style={imgStyle}>{Cards.data.map(display)}</div>
+        <h1 style={headerStyle}>{Cards.total_cards} Results</h1>
+        {emptyChecker(Cards)}
       </div>
     );
   };
