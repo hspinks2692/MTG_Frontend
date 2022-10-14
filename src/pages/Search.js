@@ -100,7 +100,7 @@ const Search = () => {
           if (colorChecker === true) {
             searchQuery += "+";
           }
-          searchQuery += "m";
+          searchQuery += "cmc";
           manaChecker = true;
         }
         searchQuery += elements[i].id;
