@@ -8,21 +8,25 @@ function Header(props) {
     border: "3px solid black",
     padding: "8px",
     width: "90%",
-    margin: "auto",
+    margin: "auto"
+  };
+
+  const titleStyle = {
+    textAlign: "center"
   };
 
   return (
     <header>
-      <h1>The Gathering</h1>
+      <h1 style={titleStyle}>The Gathering</h1>
       <nav style={navStyle}>
         <Link to="/">
           <div>HOME</div>
         </Link>
-        <Link to="/search">
+        <Link to="/test">
           <div>SEARCH</div>
         </Link>
-        <Link to="/projects">
-          <div>PROJECTS</div>
+        <Link to="/search">
+          <div>SEARCH PAGE</div>
         </Link>
       </nav>
     </header>
