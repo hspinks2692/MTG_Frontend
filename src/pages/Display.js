@@ -9,8 +9,8 @@ function Display(props) {
 
   const imgStyle = {
     maxWidth: "75%",
-    height: "auto",
-    border: "3px solid red"
+    height: "auto"
+    //border: "3px solid red"
   };
 
   const flexStyle = {
@@ -19,8 +19,8 @@ function Display(props) {
     justifyContent: "space-around",
     flexWrap: "wrap",
     padding: "25px",
-    margin: "auto",
-    border: "3px solid blue"
+    margin: "auto"
+    // border: "3px solid blue"
   };
 
   const group = {
@@ -32,7 +32,7 @@ function Display(props) {
   const infoStyle = {
     display: "flex",
     flexDirection: "column",
-    border: "3px solid green",
+    //border: "3px solid green",
     whiteSpace: "pre-line",
     maxWidth: "600px",
     height: "auto"

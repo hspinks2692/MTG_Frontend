@@ -29,10 +29,20 @@ function Show(props) {
     getCardsData();
   }, []);
 
+  const checkName = (name) => {
+    if (name.includes("//")) {
+      name = name.substring(0, name.indexOf("//"));
+      if (name === "Who " || name === "Who") {
+        name = "who-what-when-where-why";
+      }
+    }
+    return name;
+  };
+
   const check = (card) => {
     if (card.image_uris !== undefined) {
       return (
-        <Link to={`/display/${card.name}`}>
+        <Link to={`/display/${checkName(card.name)}`}>
           <img src={card.image_uris.small} alt="name"></img>
         </Link>
       );
@@ -47,7 +57,7 @@ function Show(props) {
   const loaded = () => {
     return (
       <div>
-        <h1>Test Card</h1>
+        <h1>Results</h1>
         <div style={imgStyle}>{Cards.data.map(display)}</div>
       </div>
     );
