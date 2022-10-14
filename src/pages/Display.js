@@ -48,6 +48,42 @@ function Display(props) {
     getCardData();
   }, []);
 
+  const powerAndToughness = (card) => {
+    if (card.data[0].type_line.toLowerCase().includes("creature")) {
+      return (
+        <h3>
+          {Card.data[0].power}/{Card.data[0].toughness}
+        </h3>
+      );
+    }
+  };
+
+  const checkSplit = (card) => {
+    //console.log(card.data[0].layout)
+    if (card.data[0].layout === "normal") {
+      return <p>{Card.data[0].oracle_text}</p>;
+    } else if (card.data[0].layout === "split") {
+      return card.data[0].card_faces.map((element) => {
+        return splitFormatter(element);
+      });
+    }
+  };
+
+  const splitFormatter = (face) => {
+    console.log(face.name);
+    return (
+      <section>
+        <div style={group}>
+          <h3>{face.name}</h3>
+          <p>{face.mana_cost}</p>
+        </div>
+        <div>
+          <p>{face.oracle_text}</p>
+        </div>
+      </section>
+    );
+  };
+
   const loaded = () => {
     return (
       <section style={flexStyle}>
@@ -66,11 +102,9 @@ function Display(props) {
           </div>
           <div style={group}>
             <h3>{Card.data[0].type_line}</h3>
-            <h3>
-              {Card.data[0].power}/{Card.data[0].toughness}
-            </h3>
+            {powerAndToughness(Card)}
           </div>
-          <p>{Card.data[0].oracle_text}</p>
+          {checkSplit(Card)}
         </div>
       </section>
     );

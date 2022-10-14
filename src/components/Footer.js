@@ -7,7 +7,7 @@ function Footer(props) {
     backgroundColor: "gray"
   }
 
-    return <p style={titleStyle}>The Gathering was created by Harvey Spinks using the Scryfall API<br/>Done as a personal project with no affiliation<br/>Harvey Spinks 2022</p>
+    return <p style={titleStyle}>The Gathering was created by CrypticHints using the Scryfall API<br/>Done as a personal project with no affiliation<br/>CrypticHints 2022</p>
   }
   
   export default Footer;
