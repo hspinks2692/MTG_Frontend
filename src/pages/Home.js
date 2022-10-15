@@ -96,6 +96,9 @@ function Home(props) {
       if (Max < 1) {
         Max = 1;
       }
+      if (Max > 10) {
+        Max = 10;
+      }
       let cardArray = [];
       for (let i = 0; i < Max; i++) {
         cardArray.push(Cards.data[i]);
