@@ -12,7 +12,8 @@ function Show(props) {
     justifyContent: "space-around",
     flexWrap: "wrap",
     padding: "8px",
-    margin: "auto"
+    marginLeft: "4%",
+    marginRight: "4%"
   };
 
   const headerStyle = {
@@ -81,3 +82,4 @@ function Show(props) {
 }
 
 export default Show;
+
