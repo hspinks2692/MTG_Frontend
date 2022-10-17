@@ -62,7 +62,7 @@ function Display(props) {
     //console.log(card.data[0].layout)
     if (card.data[0].layout === "normal") {
       return <p>{Card.data[0].oracle_text}</p>;
-    } else if (card.data[0].layout === "split") {
+    } else if (card.data[0].card_faces.length > 1) {
       return card.data[0].card_faces.map((element) => {
         return splitFormatter(element);
       });
@@ -70,7 +70,7 @@ function Display(props) {
   };
 
   const splitFormatter = (face) => {
-    console.log(face.name);
+    //console.log(face.name);
     return (
       <section>
         <div style={group}>
